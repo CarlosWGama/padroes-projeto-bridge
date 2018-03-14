@@ -2,14 +2,24 @@ package exemplo.classes;
 
 public class ControleRemoto {
 
-	public ControleRemoto() { }
+	private IImplementaControle implementacao;
 	
-	public void ligarTV() { /*???*/ }
+	public void setImplementacao(IImplementaControle implementacao) {
+		this.implementacao = implementacao;
+	}
 	
-	public void desligarTV() { /*???*/ }
+	public void ligarTV() {
+		implementacao.implementaLigar();
+	}
 	
-	public void mudarCanal() { /*???*/ }
+	public void desligarTV() { 
+		implementacao.implementaDesligar();
+	}
 	
+	public void mudarCanal() { 
+		implementacao.implementaMudarCanal();
+	}
 }
+
 
 
